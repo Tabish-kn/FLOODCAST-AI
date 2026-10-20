@@ -200,9 +200,9 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 
---------------------------------------------------------------------------------
-THIRD-PARTY DATASETS & MODEL WEIGHTS DISCLAIMER
---------------------------------------------------------------------------------
+********************************************************************************
+  THIRD-PARTY DATASETS & MODEL WEIGHTS DISCLAIMER
+********************************************************************************
 The software code in this repository is licensed under the Apache License 2.0.
 However, this license does NOT apply to external geospatial datasets, elevation
 models, satellite imagery, or weather data ingested or accessed by this platform.

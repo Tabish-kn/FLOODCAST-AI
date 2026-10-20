@@ -95,6 +95,7 @@ We adhere to the [Conventional Commits](https://www.conventionalcommits.org/) sp
 ```
 
 Examples:
+
 - `feat(ml): add isotonic calibration to random forest susceptibility model`
 - `fix(backend): correct type validation in config CORS origin parser`
 - `docs(readme): add interactive preview screenshots and architecture diagram`
@@ -133,6 +134,7 @@ npm run build
 ```
 
 When introducing new API endpoints or ML modules:
+
 - Write unit tests under `backend/tests/` matching the module name (e.g., `test_reports.py`).
 - Use SQLite in-memory or fixture databases for fast, deterministic unit test execution.
 
@@ -141,16 +143,20 @@ When introducing new API endpoints or ML modules:
 ## Machine Learning & Geospatial Standards
 
 ### 1. Scientific Reproducibility
+
 - **Fix Random Seeds**: Always set explicit random seeds (e.g., `random_state=42`) in dataset generators and model initializations.
 - **Leakage Prevention**: Never evaluate models on random uniform splits. Models must be evaluated on **Spatial Holdouts** (e.g., Island City held out from Suburbs) and **Temporal/Event Holdouts** (e.g., specific monsoon deluges held out from training).
 - **Metric Integrity**: Report PR-AUC and Brier score alongside ROC-AUC or accuracy. In extreme flood prediction, positive class imbalance means ROC-AUC alone is misleading.
 
 ### 2. Geospatial Coordinates & Projections
+
 - Internal storage and API payloads must use **WGS 84 (EPSG:4326)** coordinates formatted as `[longitude, latitude]`.
 - Distance and buffer calculations must project to an appropriate UTM projection (e.g., **UTM Zone 43N / EPSG:32643** for Mumbai) before calculating Euclidean metrics.
 
 ### 3. Dataset Contributions
+
 If contributing new environmental layers or observational records:
+
 - **Provenance**: Document original data source, provider, and collection date.
 - **License**: Verify that the license allows redistribution or derivative modeling. Do not commit proprietary data.
 - **Spatial Resolution**: Document native resolution (e.g., 30m Copernicus DEM, 0.05° CHIRPS).

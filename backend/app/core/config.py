@@ -1,7 +1,7 @@
 """Configuration management for FloodCast AI."""
 
 import json
-from typing import List, Union
+from typing import Any, List, Union
 from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     ]
 
     @field_validator("CORS_ORIGINS", mode="before")
-    def assemble_cors_origins(cls, v: Union[str, List[str]]) -> List[str]:
+    def assemble_cors_origins(cls, v: Any) -> List[str]:
         if isinstance(v, str):
             if v.startswith("["):
                 loaded = json.loads(v)

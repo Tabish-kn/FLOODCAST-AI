@@ -81,3 +81,17 @@
 
 - [x] **DOC-007**: Write comprehensive [README.md](file:///a:/Sem%202/files/FLOODCAST%20AI/README.md) with architecture overview, local startup steps, API documentation, and test commands.
 - [x] **REL-001**: Execute browser subagent visual validation across all routes and capture session artifact.
+
+### Phase 7: Open-Source GitHub Repository Infrastructure
+
+- [x] **GH-001**: Implement Apache 2.0 [LICENSE](file:///a:/Sem%202/files/FLOODCAST%20AI/LICENSE) with third-party geospatial dataset disclaimers.
+- [x] **GH-002**: Implement Contributor Covenant v2.1 [CODE_OF_CONDUCT.md](file:///a:/Sem%202/files/FLOODCAST%20AI/CODE_OF_CONDUCT.md).
+- [x] **GH-003**: Implement comprehensive [SECURITY.md](file:///a:/Sem%202/files/FLOODCAST%20AI/SECURITY.md) covering vulnerability reporting, secrets policy, and geospatial coordinate fuzzing.
+- [x] **GH-004**: Create Citation File Format [CITATION.cff](file:///a:/Sem%202/files/FLOODCAST%20AI/CITATION.cff).
+- [x] **GH-005**: Add [.editorconfig](file:///a:/Sem%202/files/FLOODCAST%20AI/.editorconfig) for universal multi-language formatting rules.
+- [x] **GH-006**: Create [CHANGELOG.md](file:///a:/Sem%202/files/FLOODCAST%20AI/CHANGELOG.md) following Keep a Changelog standard.
+- [x] **GH-007**: Create comprehensive [CONTRIBUTING.md](file:///a:/Sem%202/files/FLOODCAST%20AI/CONTRIBUTING.md) with PR checklist, branch conventions, and ML reproducibility rules.
+- [x] **GH-008**: Create structured GitHub issue templates (`.github/ISSUE_TEMPLATE/{bug_report,feature_request,data_issue,config}.yml`).
+- [x] **GH-009**: Create [.github/PULL_REQUEST_TEMPLATE.md](file:///a:/Sem%202/files/FLOODCAST%20AI/.github/PULL_REQUEST_TEMPLATE.md).
+- [x] **GH-010**: Create automated CI workflow [.github/workflows/ci.yml](file:///a:/Sem%202/files/FLOODCAST%20AI/.github/workflows/ci.yml) verifying backend pytest suite and frontend production build.
+- [x] **GH-011**: Populate `docs/images/` with real verified dashboard preview screenshots and update `README.md` to satisfy all 22 required sections.

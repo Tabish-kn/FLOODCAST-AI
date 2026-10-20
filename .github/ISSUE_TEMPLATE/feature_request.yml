@@ -1,0 +1,48 @@
+name: Feature Request
+description: Propose an idea, new capability, or enhancement for FloodCast AI.
+labels: ["enhancement", "proposal"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We welcome proposals for machine learning models, geospatial indicators, visualization enhancements, and community tools.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What challenge, limitation, or unmet user need does this feature address?
+      placeholder: e.g. "Currently, drainage network distance does not account for sub-surface stormwater capacity..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution or new capability you would like to see implemented.
+      placeholder: Describe the technical approach, algorithm, or user interface addition...
+    validations:
+      required: true
+  - type: dropdown
+    id: intended_users
+    attributes:
+      label: Intended Primary Users
+      options:
+        - "Municipal / Emergency Responders"
+        - "Urban Logistics & Fleet Operators"
+        - "Climate & Geospatial Researchers"
+        - "Local Citizens & Community Observers"
+        - "Commercial Property & Infrastructure Managers"
+    validations:
+      required: true
+  - type: textarea
+    id: expected_impact
+    attributes:
+      label: Expected Impact
+      description: How will this improve risk estimation accuracy, user experience, or community resilience?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Describe any alternative solutions or workarounds you considered and why they were rejected.

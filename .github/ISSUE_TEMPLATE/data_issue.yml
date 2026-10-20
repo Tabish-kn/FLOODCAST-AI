@@ -1,0 +1,55 @@
+name: Geospatial Data Issue
+description: Report errors, artifacts, or licensing questions in geospatial datasets or flood observations.
+labels: ["data", "geospatial"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report discrepancies or artifacts in digital elevation models, hydrology layers, administrative boundaries, or historical flood records.
+  - type: input
+    id: data_source
+    attributes:
+      label: Data Source
+      description: Name of the dataset (e.g. Copernicus DEM, CHIRPS, OpenStreetMap, Community Observation Layer).
+      placeholder: Copernicus GLO-30 / OpenStreetMap Waterways / BMC Deluge Records
+    validations:
+      required: true
+  - type: input
+    id: geographic_coverage
+    attributes:
+      label: Geographic Coverage & Coordinates
+      description: Specific bounding box, ward name, or coordinate range in WGS84 (e.g. Island City / Kurla / Mithi River basin).
+      placeholder: "72.86E, 19.06N (BKC / Kurla West)"
+    validations:
+      required: true
+  - type: input
+    id: observation_period
+    attributes:
+      label: Observation Period / Date Range
+      description: Date or monsoon season associated with the data discrepancy.
+      placeholder: "July 2023 Monsoon / 2005 Deluge Event"
+  - type: input
+    id: data_version
+    attributes:
+      label: Data Version / Release Tag
+      description: Version of the dataset or pipeline run if known.
+      placeholder: "v1.0.0 / raw 2024-06 release"
+  - type: textarea
+    id: suspected_problem
+    attributes:
+      label: Suspected Data Quality Problem
+      description: Explain the artifact, inaccurate water level, missing drain line, misclassified land cover, or coordinate shift.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence & Verification Notes
+      description: Reference official reports, satellite captures, or ground-truth verification that substantiates the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: licensing
+    attributes:
+      label: Licensing & Provenance Considerations
+      description: Note any upstream license terms, attribution constraints, or privacy considerations.

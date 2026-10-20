@@ -48,5 +48,6 @@ Community waterlogging reports contribute crucial ground-truth validation, but c
 ## Third-Party Data Compliance
 
 FloodCast AI respects terms of service for external services:
+
 - Rate limits on public APIs (e.g., Open-Meteo, OpenStreetMap Nominatim/Overpass, Copernicus Data Space) must be respected with local caching and exponential backoff.
 - Commercial reuse of geospatial products must respect upstream licensing constraints.
