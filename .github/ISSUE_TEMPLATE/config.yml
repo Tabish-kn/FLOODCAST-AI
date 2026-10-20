@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: FloodCast AI Community Discussions
+    url: https://github.com/[CONFIGURE_ORG_OR_USER]/floodcast-ai/discussions
+    about: Ask questions, share ideas, and connect with other climate-risk researchers and developers.
+  - name: Security Vulnerability Reporting
+    url: https://github.com/[CONFIGURE_ORG_OR_USER]/floodcast-ai/security/policy
+    about: Privately disclose security vulnerabilities or sensitive data exposures.

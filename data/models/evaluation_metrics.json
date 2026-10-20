@@ -1,0 +1,62 @@
+{
+  "model_version": "v1.0-rf-mumbai",
+  "target_type": "SUSCEPTIBILITY",
+  "feature_importances": {
+    "elevation_m": 0.2379,
+    "slope_degrees": 0.1371,
+    "distance_to_waterway_m": 0.0714,
+    "distance_to_storm_outfall_m": 0.086,
+    "impervious_surface_fraction": 0.0186,
+    "historical_waterlogging_frequency": 0.1845,
+    "is_depression": 0.2644
+  },
+  "spatial_holdout": {
+    "precision": 0.8764,
+    "recall": 0.3786,
+    "pr_auc": 0.7182,
+    "brier_score": 0.1649,
+    "calibration_detail": {
+      "prob_true": [
+        0.21037463976945245,
+        0.34507042253521125,
+        0.2727272727272727,
+        0.375,
+        0.9615384615384616
+      ],
+      "prob_pred": [
+        0.14609380887396614,
+        0.268694760718435,
+        0.44943609404348595,
+        0.7232127806251057,
+        0.9210287582504945
+      ]
+    },
+    "sample_size": 597,
+    "positive_ratio": 0.3451
+  },
+  "event_holdout": {
+    "precision": 0.9355,
+    "recall": 0.5273,
+    "pr_auc": 0.7799,
+    "brier_score": 0.115,
+    "calibration_detail": {
+      "prob_true": [
+        0.018518518518518517,
+        0.25,
+        0.5,
+        0.7142857142857143,
+        0.9807692307692307
+      ],
+      "prob_pred": [
+        0.02254848776192115,
+        0.24899488398221678,
+        0.49804722596489537,
+        0.6525517112599155,
+        0.9815544480888911
+      ]
+    },
+    "sample_size": 369,
+    "positive_ratio": 0.2981
+  },
+  "training_samples_total": 1500
+}

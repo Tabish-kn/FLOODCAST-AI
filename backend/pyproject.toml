@@ -1,0 +1,41 @@
+[project]
+name = "floodcast-backend"
+version = "1.0.0"
+description = "Hyperlocal Flood-Risk Intelligence Platform Backend"
+authors = [{ name = "FloodCast AI Team" }]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "pydantic>=2.8.0",
+    "pydantic-settings>=2.4.0",
+    "sqlalchemy>=2.0.30",
+    "shapely>=2.0.0",
+    "python-multipart>=0.0.9",
+    "passlib[bcrypt]>=1.7.4",
+    "pyjwt>=2.8.0",
+    "httpx>=0.27.0",
+    "scikit-learn>=1.5.0",
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "joblib>=1.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.2.0",
+    "pytest-asyncio>=0.23.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pyright]
+extraPaths = [".", "..", "app"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+pythonpath = [".", ".."]

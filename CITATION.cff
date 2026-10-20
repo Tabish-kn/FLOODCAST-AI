@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use FloodCast AI in academic research, geospatial evaluations, or climate-risk studies, please cite it as below."
+title: "FloodCast AI: Hyperlocal Flood-Risk Intelligence Powered by Geospatial Machine Learning"
+abstract: "An open-source ClimateTech and geospatial machine-learning platform for hyperlocal flood susceptibility mapping, community flood observation, and risk assessment focused on Mumbai, India."
+version: 1.0.0
+date-released: 2026-10-21
+license: Apache-2.0
+repository-code: "https://github.com/[CONFIGURE_ORG_OR_USER]/floodcast-ai"
+keywords:
+  - "flood-risk"
+  - "geospatial-ai"
+  - "machine-learning"
+  - "remote-sensing"
+  - "mumbai"
+  - "climate-resilience"
+  - "hydrology"
+  - "participatory-sensing"
+authors:
+  - name: "FloodCast AI Contributors"
+    website: "https://github.com/[CONFIGURE_ORG_OR_USER]/floodcast-ai"
+type: software
