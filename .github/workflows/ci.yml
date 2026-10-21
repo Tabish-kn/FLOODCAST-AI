@@ -35,6 +35,10 @@ jobs:
           cd backend
           python -c "from app.db.session import init_db; init_db()"
 
+      - name: Verify ML baseline model artifact
+        run: |
+          python -m ml.train_susceptibility
+
       - name: Run unit and integration tests with pytest
         run: |
           cd backend

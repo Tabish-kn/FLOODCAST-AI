@@ -16,6 +16,12 @@ _model = None
 def get_model():
     global _model
     if _model is None:
+        if not MODEL_PATH.exists():
+            try:
+                from ml.train_susceptibility import run_training_and_evaluation
+                run_training_and_evaluation()
+            except Exception as e:
+                print(f"[Inference] On-demand baseline training encountered: {e}")
         if MODEL_PATH.exists():
             _model = joblib.load(MODEL_PATH)
         else:

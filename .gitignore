@@ -59,8 +59,10 @@ data/raw/*
 !data/raw/.gitkeep
 data/processed/*
 !data/processed/.gitkeep
+!data/processed/mumbai_flood_benchmark.csv
 data/models/*.joblib
 !data/models/.gitkeep
+!data/models/baseline_rf_susceptibility.joblib
 
 # Pytest & Coverage
 .pytest_cache/
