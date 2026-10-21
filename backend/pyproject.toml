@@ -4,7 +4,7 @@ version = "1.0.0"
 description = "Hyperlocal Flood-Risk Intelligence Platform Backend"
 authors = [{ name = "FloodCast AI Team" }]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = [
     "fastapi>=0.115.0",
     "uvicorn>=0.30.0",
