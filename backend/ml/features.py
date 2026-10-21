@@ -1,10 +1,33 @@
 """Hydrological and geospatial feature extraction for Mumbai."""
 
 import math
-from typing import Dict, Tuple
+from typing import Dict, List, Tuple, TypedDict
+
+
+class TidalOutfall(TypedDict):
+    name: str
+    lat: float
+    lon: float
+
+
+class ElevatedCenter(TypedDict):
+    name: str
+    lat: float
+    lon: float
+    peak_elev: float
+    radius_km: float
+
+
+class HistoricDepression(TypedDict):
+    name: str
+    lat: float
+    lon: float
+    base_elev: float
+    freq: int
+
 
 # Key geographical references for Mumbai
-TIDAL_OUTFALLS = [
+TIDAL_OUTFALLS: List[TidalOutfall] = [
     {"name": "Mithi River Mahim Bay Outfall", "lat": 19.0435, "lon": 72.8402},
     {"name": "Lovegrove Outfall Worli", "lat": 19.0062, "lon": 72.8135},
     {"name": "Cleveland Bunder Worli", "lat": 19.0180, "lon": 72.8180},
@@ -16,7 +39,7 @@ TIDAL_OUTFALLS = [
 ]
 
 # Major elevated areas (hills/ridges) in Mumbai
-ELEVATED_CENTERS = [
+ELEVATED_CENTERS: List[ElevatedCenter] = [
     {"name": "Malabar Hill", "lat": 18.9560, "lon": 72.7980, "peak_elev": 52.0, "radius_km": 1.2},
     {"name": "Cumbala Hill", "lat": 18.9680, "lon": 72.8050, "peak_elev": 46.0, "radius_km": 1.0},
     {"name": "Worli Hill", "lat": 19.0150, "lon": 72.8190, "peak_elev": 36.0, "radius_km": 0.8},
@@ -29,7 +52,7 @@ ELEVATED_CENTERS = [
 ]
 
 # Known low-lying depressions / historic waterlogging epicenters
-HISTORIC_DEPRESSIONS = [
+HISTORIC_DEPRESSIONS: List[HistoricDepression] = [
     {"name": "Hindmata / Parel", "lat": 19.0069, "lon": 72.8415, "base_elev": 2.8, "freq": 9},
     {"name": "Gandhi Market / King's Circle", "lat": 19.0330, "lon": 72.8570, "base_elev": 2.6, "freq": 9},
     {"name": "Milan Subway", "lat": 19.0888, "lon": 72.8427, "base_elev": 2.0, "freq": 10},
@@ -128,6 +151,6 @@ def compute_hydrological_features(lat: float, lon: float) -> Dict[str, float]:
         "distance_to_waterway_m": round(dist_to_waterway, 1),
         "distance_to_storm_outfall_m": round(min_outfall_dist, 1),
         "impervious_surface_fraction": round(impervious, 2),
-        "historical_waterlogging_frequency": hist_freq,
+        "historical_waterlogging_frequency": float(hist_freq),
         "is_depression": 1.0 if is_depression else 0.0,
     }

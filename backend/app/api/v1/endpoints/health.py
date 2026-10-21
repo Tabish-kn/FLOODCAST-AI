@@ -1,7 +1,7 @@
 """Health, readiness, and metadata endpoints."""
 
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import text
@@ -16,7 +16,7 @@ def health_check():
     """Liveness probe."""
     return {
         "status": "healthy",
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "app": settings.APP_NAME,
         "version": settings.APP_VERSION,
         "environment": settings.ENVIRONMENT,
@@ -43,7 +43,7 @@ def readiness_check(db: Session = Depends(get_db)):
         "model_loaded": model_ok,
         "demo_mode": settings.DEMO_MODE,
         "study_area": settings.STUDY_AREA_NAME,
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
     }
 
 

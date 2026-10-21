@@ -4,7 +4,7 @@ import os
 import joblib
 import pandas as pd
 from typing import Dict, Any
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from ml.features import compute_hydrological_features, haversine_distance_m, HISTORIC_DEPRESSIONS
 
@@ -82,7 +82,7 @@ def predict_location_risk(
         "Real-time municipal storm curb inlet debris and pump station operational status are unobserved."
     )
 
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
 
     return {
         "prediction_id": f"pred-{int(now.timestamp())}-{abs(hash((lat, lon))) % 10000:04d}",

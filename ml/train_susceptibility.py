@@ -80,7 +80,7 @@ def run_training_and_evaluation(
     calibrated_sp.fit(X_train_sp, y_train_sp)
 
     probs_spatial = calibrated_sp.predict_proba(X_test_sp)[:, 1]
-    metrics_spatial = evaluate_split(y_test_sp.values, probs_spatial)
+    metrics_spatial = evaluate_split(np.asarray(y_test_sp), probs_spatial)
     print(f"\n[SPATIAL HOLDOUT] Test Ward: Island City (N={len(y_test_sp)})")
     print(f"  PR-AUC: {metrics_spatial['pr_auc']:.4f}")
     print(f"  Brier Score: {metrics_spatial['brier_score']:.4f}")
@@ -101,7 +101,7 @@ def run_training_and_evaluation(
     calibrated_ev.fit(X_train_ev, y_train_ev)
 
     probs_event = calibrated_ev.predict_proba(X_test_ev)[:, 1]
-    metrics_event = evaluate_split(y_test_ev.values, probs_event)
+    metrics_event = evaluate_split(np.asarray(y_test_ev), probs_event)
     print(f"\n[EVENT HOLDOUT] Test Year: 2023 Deluge (N={len(y_test_ev)})")
     print(f"  PR-AUC: {metrics_event['pr_auc']:.4f}")
     print(f"  Brier Score: {metrics_event['brier_score']:.4f}")

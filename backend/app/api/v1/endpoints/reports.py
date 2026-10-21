@@ -3,7 +3,7 @@
 import random
 import hashlib
 from typing import List, Optional
-from datetime import datetime
+from datetime import datetime, timezone
 from fastapi import APIRouter, Depends, Query, HTTPException, Request, status
 from sqlalchemy.orm import Session
 from app.db.session import get_db
@@ -47,7 +47,7 @@ def submit_community_report(
 
     # 3. Anonymized IP hash
     client_ip = request.client.host if request.client else "unknown"
-    ip_hash = hashlib.sha256(f"{client_ip}-{datetime.utcnow().strftime('%Y-%m-%d')}".encode()).hexdigest()[:16]
+    ip_hash = hashlib.sha256(f"{client_ip}-{datetime.now(timezone.utc).strftime('%Y-%m-%d')}".encode()).hexdigest()[:16]
 
     # Find study area
     study_area = db.query(StudyArea).first()
@@ -59,7 +59,7 @@ def submit_community_report(
         longitude=payload.longitude,
         fuzzed_latitude=fuzzed_lat,
         fuzzed_longitude=fuzzed_lon,
-        observation_time=datetime.utcnow(),
+        observation_time=datetime.now(timezone.utc),
         category=payload.category,
         depth_range=payload.depth_range,
         road_passability=payload.road_passability,
@@ -120,7 +120,7 @@ def review_community_report(
 
     report.verification_status = payload.decision
     report.notes = payload.reason
-    report.updated_at = datetime.utcnow()
+    report.updated_at = datetime.now(timezone.utc)
 
     review_log = ReportReview(
         report_id=report.id,

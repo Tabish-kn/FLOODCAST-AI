@@ -1,6 +1,7 @@
 """Database initialization and seeding script."""
 
 import json
+from typing import Any, List, Dict
 from datetime import datetime
 from app.db.session import engine, SessionLocal, Base
 from app.models.entities import (
@@ -135,7 +136,7 @@ def seed_database():
 
         # 3. Historical Flood Events & Observations
         if db.query(FloodEvent).count() == 0:
-            events_data = [
+            events_data: List[Dict[str, Any]] = [
                 {
                     "name": "Mumbai Great Deluge 2005",
                     "date": "2005-07-26",
@@ -196,7 +197,8 @@ def seed_database():
                 db.commit()
                 db.refresh(fe)
 
-                for ob in ev["obs"]:
+                obs_list: List[Dict[str, Any]] = ev.get("obs", [])
+                for ob in obs_list:
                     fo = FloodObservation(
                         event_id=fe.id,
                         location_name=ob["name"],
