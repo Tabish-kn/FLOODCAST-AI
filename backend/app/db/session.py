@@ -29,3 +29,10 @@ def get_db() -> Generator[Session, None, None]:
         yield db
     finally:
         db.close()
+
+
+def init_db() -> None:
+    """Initialize database tables and seed default fixtures."""
+    from app.db.seed import seed_database
+    seed_database()
+
